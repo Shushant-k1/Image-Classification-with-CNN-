@@ -1,11 +1,13 @@
 from PIL import Image, ImageOps
 import numpy as np
-import pytorch as torch
+import tensorflow as tf
 
+st.set_option('deprecation.showfileUploaderEncoding', False)
+
+@st.cache(allow_output_mutation=True)
 def load_model():
-    model = torch.hub.load('pytorch/vision:v0.10.0', 'potatoes',pretrained=True)
-    model.eval()
-    return model
+	model = tf.keras.models.load_model('./potatoes.h5')
+	return model
 
 def teachable_machine_classification(img,potatoes):
     # Load the model
