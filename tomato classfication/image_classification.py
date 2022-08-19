@@ -1,5 +1,6 @@
 from PIL import Image, ImageOps
 import numpy as np
+import pytorch as torch
 
 def load_model():
     model = torch.hub.load('pytorch/vision:v0.10.0', 'potatoes')
