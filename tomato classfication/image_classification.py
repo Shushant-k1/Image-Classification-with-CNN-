@@ -1,9 +1,14 @@
-import keras
 from PIL import Image, ImageOps
 import numpy as np
+
+def load_model():
+    model = torch.hub.load('pytorch/vision:v0.10.0', 'potatoes')
+    model.eval()
+    return model
+
 def teachable_machine_classification(img,potatoes):
     # Load the model
-    model = keras.models.load_model(potatoes)
+    model=load_model()
 
     # Create the array of the right shape to feed into the keras model
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
