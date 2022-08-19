@@ -1,9 +1,6 @@
-numpy==1.16.4
-
-streamlit==0.52.1
-python==3.5
+numpy
+streamlit
+python
 pillow
-
 keras
-
 tensorflow
